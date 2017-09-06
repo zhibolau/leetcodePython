@@ -10,7 +10,6 @@ class Solution(object):
         for i,ch in enumerate(s):
             if ch in d and d[ch]>=left:
                 left = d[ch]+1
-                res = max(res,i-left+1)
             d[ch]=i
-            
-        return len(s) if res == 0 else res    
+            res = max(res,i-left+1)
+        return res    
