@@ -16,9 +16,9 @@ class Solution:
             else:
                 lookup[val] = -1
             
-            while lookup[val] < 0:
+            while lookup[val] < 0: #p出现s中没有的字母
                 lookup[s[left]] += 1
-                left += 1
+                left += 1 #因为发现不一样的字母出现了 挪动指针/窗口
             if right-left+1 == len(p):
                 result.append(left)
         return result
