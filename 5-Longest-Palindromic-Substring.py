@@ -28,21 +28,20 @@ class Solution:
             return True
         return False
 
-
+#https://www.google.com/search?q=Longest+Palindromic+Substring+michelle&oq=Longest+Palindromic+Substring+michelle&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQIRigATIHCAIQIRigAdIBCDUzNTFqMGoxqAIAsAIA&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:380542d5,vid:nSFWpXuNfyw
 #O(n^2) 从中心向两边扩散
 #如果s[left]==s[right]，left减一，right加1知道不相等或者超出边界范围，
 #同时比较当前满足回文的子串的长度与当前最长子串的长度，如果更长，则更新最长子串的长度。
 
     def longestPalindrome(self, s: str) -> str:
-        p = ''
-        
+        p = ''#Palindrome可以 ada 或者 aa
         for i in range(len(s)):
             #"bab"
-            len1 = len(self.get_longest_p(s,i,i))
+            len1 = len(self.get_longest_p(s,i,i)) #从一个字母扩散
             if len1>len(p):
                 p = self.get_longest_p(s,i,i)
             #"bb"
-            len2 = len(self.get_longest_p(s,i,i+1))
+            len2 = len(self.get_longest_p(s,i,i+1))#从2个字母扩散
             if len2>len(p):
                 p = self.get_longest_p(s,i,i+1)
         return p
