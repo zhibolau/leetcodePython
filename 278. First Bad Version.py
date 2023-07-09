@@ -7,7 +7,7 @@ class Solution:
         right = n
         while left < right:
             mid = (left+right)//2
-            if isBadVersion(mid):
+            if isBadVersion(mid): #这时候r是bad，再一次循环m在l与r中间，此时m不是bad， 再加一个就是第一个bad
                 right= mid
             else:
                 left = mid +1
