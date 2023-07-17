@@ -14,3 +14,21 @@ class Solution(object):
                 list.append(i)
                 return list
             dict[x] = i
+
+
+#method 2 brute force
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        res = []
+        x = 0
+
+        for i in nums:
+            x +=1
+            for j in range(x,len(nums)):
+                if i + nums[j] == target:
+                    res.append(x-1)
+                    res.append(j)
+                    return res
+        return res
+
+
