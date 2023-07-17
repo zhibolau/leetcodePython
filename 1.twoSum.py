@@ -14,6 +14,16 @@ class Solution(object):
                 list.append(i)
                 return list
             dict[x] = i
+        
+        #better dict
+        dict = {}
+
+        for i,j in enumerate(nums):
+            if j not in dict:
+                dict[target - j] = i
+            else:
+                return [dict[j],i]
+        
 
 
 #method 2 brute force
