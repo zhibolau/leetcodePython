@@ -7,7 +7,7 @@ class Solution:
             elif interval[0] > newInterval[1]:
                 res.append(newInterval)
                 return res+intervals[index:]
-            else:
+            else:#有交集
                 newStart = min(interval[0],newInterval[0])
                 newEnd = max(interval[1],newInterval[1])
                 newInterval = [newStart,newEnd]
