@@ -19,7 +19,7 @@ class Solution(object):
         dict = {}
 
         for i,j in enumerate(nums):
-            if j not in dict:
+            if j not in dict: #已经遇到j了，下一次就要找target-j，所以遇到j了就直接拿到他的参数
                 dict[target - j] = i
             else:
                 return [dict[j],i]
