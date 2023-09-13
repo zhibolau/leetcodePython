@@ -10,7 +10,7 @@ class Solution:
     def dfs(self,x, n):
         if n == 1:
             return x
-        res = self.dfs(x, n //2)
+        res = self.dfs(x, n //2) 
         if n %2 == 0:
             return res * res
         else:
