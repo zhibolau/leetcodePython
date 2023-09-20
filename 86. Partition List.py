@@ -13,10 +13,10 @@ class Solution:
       
       while fast and fast.next:
       
-         if fast.next.val >=x:# 小于x的时候就继续往前走
+         if fast.next.val >=x:# 找到partition的点
             fast = fast.next 
          else:
-            if fast == slow:  # 小于x的时候就继续往前走
+            if fast == slow:  # 没到partition时候快慢一起走
                fast = fast.next 
                slow = slow.next 
             else:
