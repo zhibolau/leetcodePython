@@ -46,7 +46,7 @@ class Solution:
         res = 0
         sum = 0
 
-        while len(nestedList) > 0:
+        while len(nestedList) > 0: # 计算每一层的int的sum，不是int就放入新的list
             new_nestedList = []
             for i in nestedList:
                 if i.isInteger():
