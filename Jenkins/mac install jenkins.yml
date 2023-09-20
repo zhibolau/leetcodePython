@@ -8,7 +8,7 @@ docker run --name jenkins-docker --rm --detach \
   --publish 2376:2376 \
   docker:dind --storage-driver overlay2
 
-Dockerfile:
+#Dockerfile:
 
 FROM jenkins/jenkins:2.414.2-jdk17
 USER root
@@ -32,3 +32,8 @@ docker run --name jenkins-blueocean --restart=on-failure --detach \
   --volume jenkins-data:/var/jenkins_home \
   --volume jenkins-docker-certs:/certs/client:ro \
   myjenkins-blueocean:2.414.2-1
+
+#unlock jenkins:
+
+docker exec containername/id cat /var/jenkins_home/secrets/initialAdminPassword
+input_password
