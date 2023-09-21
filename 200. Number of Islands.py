@@ -15,7 +15,7 @@ class Solution:
 
     def bfs(self,grid,x,y):
         queue = deque([(x,y)])
-        grid[x][y] == '0' # 设置成0 说明已经计算过他了，本来他是1
+        grid[x][y] = '0' # 设置成0 说明已经计算过他了，本来他是1
         while queue:
             x,y = queue.popleft()
             for delta_x,delta_y in [(1,0),(0,-1),(0,1),(-1,0)]:
