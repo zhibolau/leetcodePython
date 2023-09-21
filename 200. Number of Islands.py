@@ -9,7 +9,7 @@ class Solution:
         for x in range(rows):
             for y in range(cols):
                 if grid[x][y] == '1':
-                    self.bfs(grid,x,y) #找到周边都是1的区域
+                    self.bfs(grid,x,y) #找到周边都是1的区域；都找遍了 数量加1，再去找下一个不相邻的1
                     res += 1
         return res
 
