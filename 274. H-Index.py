@@ -8,6 +8,6 @@ class Solution(object):
         
         count = 0
         for i in range(len(citations) -1, -1, -1):
-            if citations[i] > count: #引用次数要比第几个论文要大
+            if citations[i] > count: #当前论文的引用次数要比 被引用的论文的数量 要大
                 count += 1
         return count
