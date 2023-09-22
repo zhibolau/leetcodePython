@@ -13,6 +13,5 @@ class Solution(object):
                 #看当前end值是否可以到达终点
                 if end >= n - 1:
                     return True
-            else:
         return False
         
