@@ -20,6 +20,14 @@ def  removeDuplicates(nums):
     return index+1
 
 
+#method 2
+    if not nums:
+        return 0
+    for i in range(len(nums)-1,0,-1):
+        if nums[i] == nums[i-1]:
+            nums.remove(nums[i])
+    return len(nums)
+
 
 #******************************结束写代码******************************
 
