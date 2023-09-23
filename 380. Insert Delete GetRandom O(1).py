@@ -48,10 +48,11 @@ class RandomizedSet(object):
         if val not in self.val2index:
             return False
         last = self.nums[-1]
-        index = self.val2index[val]
+        index = self.val2index[val] #拿到需要删除的数字的位置
 
-        self.nums[index] = last
-        self.val2index[last] = index
+        # move the last element to index
+        self.nums[index] = last #把需要删除的数字的位置的值换成last
+        self.val2index[last] = index  #更新last的位置为 被删除数字的index
         
         del self.val2index[val]
         self.nums.pop()
