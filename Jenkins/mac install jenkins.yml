@@ -37,3 +37,14 @@ docker run --name jenkins-blueocean --restart=on-failure --detach \
 
 docker exec containername/id cat /var/jenkins_home/secrets/initialAdminPassword
 input_password
+
+#ssh into docker with ROOT
+docker exec -u 0 -it mycontainer bash
+
+#gen ssh key
+ssh-keygen -t KEY-NAME -C "your_email@example.com"
+
+#Setup SSH between Jenkins and Github
+https://levelup.gitconnected.com/setup-ssh-between-jenkins-and-github-e4d7d226b271
+
+# leave branch setting blank resolve build issue
