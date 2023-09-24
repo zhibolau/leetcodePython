@@ -78,6 +78,9 @@ x86_64
 root@ad4ba2b5f429:/var/jenkins_home# arch
 x86_64
 
+#maven jenkins settings
+choose your maven settings.xml path
+
 #added maven POM.xml 
 [WARNING] JAR will be empty - no content was marked for inclusion!
 [INFO] Building jar: /var/jenkins_home/workspace/test/target/project-10-1.0.jar
