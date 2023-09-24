@@ -1,3 +1,4 @@
+#good ref https://blog.csdn.net/DreamsArchitects/article/details/128122158?utm_medium=distribute.pc_relevant.none-task-blog-2~default~baidujs_baidulandingword~default-0-128122158-blog-123427567.235^v38^pc_relevant_anti_vip_base&spm=1001.2101.3001.4242.1&utm_relevant_index=3
 docker network create jenkins
 
 docker run --name jenkins-docker --rm --detach \
@@ -48,3 +49,36 @@ ssh-keygen -t KEY-NAME -C "your_email@example.com"
 https://levelup.gitconnected.com/setup-ssh-between-jenkins-and-github-e4d7d226b271
 
 # leave branch setting blank resolve build issue
+
+#check source code in the container 
+root@ad4ba2b5f429:/# cd /var/jenkins_home/workspace/test/
+root@ad4ba2b5f429:/var/jenkins_home/workspace/test# ls
+LICENSE  README.md  jen.txt  new.txt  test.txt
+
+
+#install jdk
+apt update
+root@ad4ba2b5f429:/var/jenkins_home# java --version
+openjdk 17.0.8.1 2023-08-24
+OpenJDK Runtime Environment Temurin-17.0.8.1+1 (build 17.0.8.1+1)
+OpenJDK 64-Bit Server VM Temurin-17.0.8.1+1 (build 17.0.8.1+1, mixed mode)
+
+root@ad4ba2b5f429:/var/jenkins_home# javac --version
+javac 17.0.8.1
+
+#install maven
+wget https://dlcdn.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz
+tar -xvf apache-maven-3.9.4-bin.tar.gz 
+wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz
+tar -xvf jdk-21_linux-x64_bin.tar.gz 
+
+#check architecture
+root@ad4ba2b5f429:/var/jenkins_home# uname -m
+x86_64
+root@ad4ba2b5f429:/var/jenkins_home# arch
+x86_64
+
+#added maven POM.xml 
+[WARNING] JAR will be empty - no content was marked for inclusion!
+[INFO] Building jar: /var/jenkins_home/workspace/test/target/project-10-1.0.jar
+[INFO] BUILD SUCCESS
