@@ -36,9 +36,7 @@ class Solution:
             x +=1
             for j in range(x,len(nums)):
                 if i + nums[j] == target:
-                    res.append(x-1)
+                    res.append(x-1) #注意i的index
                     res.append(j)
                     return res
-        return res
-
 
