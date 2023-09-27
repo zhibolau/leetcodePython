@@ -20,7 +20,7 @@ class Solution(object):
 
         for i,j in enumerate(nums):
             if j not in dict: #已经遇到j了，下一次就要找target-j，所以遇到j了就直接拿到他的参数
-                dict[target - j] = i
+                dict[target - j] = i #target -j 是因为我们希望遇到target-j，因为就找到了
             else:
                 return [dict[j],i]
         
