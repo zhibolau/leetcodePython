@@ -9,7 +9,7 @@ class Solution(object):
         d = {}
         for i,ch in enumerate(s):
             if ch in d and d[ch]>=left:
-                left = d[ch]+1
-            d[ch]=i
+                left = d[ch]+1 #出现重复了  挪动左pointer
+            d[ch]=i #记录当前值的index
             res = max(res,i-left+1)
         return res    
