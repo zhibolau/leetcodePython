@@ -1,4 +1,5 @@
 DIRECTIONS = [(0,-1),(0,1),(-1,0),(1,0)]
+#python2会出错。。。。。。。。。
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
         if not matrix or not matrix[0]: return None
