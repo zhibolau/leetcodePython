@@ -1,0 +1,18 @@
+class Solution:
+    def minMutation(self, startGene: str, endGene: str, bank: List[str]) -> int:
+        if not bank: return -1
+        q = deque()
+        q.append((startGene,0))
+        bank = set(bank)
+        while q:
+            start,step = q.popleft()
+            if start == endGene:
+                return step
+            for c in 'ACGT':
+                for i in range(len(start)):
+                    new_str = start[:i] + c + start[i+1:]
+                    if new_str in bank:
+                        q.append((new_str,step+1))
+                        bank.remove(new_str)
+
+        return -1
