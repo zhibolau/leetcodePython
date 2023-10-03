@@ -1,3 +1,5 @@
+#https://www.jianshu.com/p/d9972db1571f  dict tree 图示
+
 class TrieNode:
     def __init__(self):
         self.child = {} #store every inserted word's letter
