@@ -26,7 +26,7 @@ class Trie:
 
     def search(self, word: str) -> bool:
         node = self.find(word)
-        return self.find(word) is not None and node.is_word
+        return node is not None and node.is_word
 
 
     def startsWith(self, prefix: str) -> bool:
