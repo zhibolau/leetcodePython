@@ -23,14 +23,14 @@ class Solution:
 
             total = sum([grid[h+i][w+j] for i in range(N) for j in range(N)])   # 求取当前方格内的和
 
-            if total == 0:                                              # 如果方格内所有元素都是0
+            if total == 0:                                              # 如果方格内 所有元素都 是0
                 return Node(False, True, None, None, None, None)        # 构造一个值为False的叶子节点
 
-            elif total == N * N:                                        # 如果方格内所有元素都是1
+            elif total == N * N:                                        # 如果方格内 所有元素都 是1
                 return Node(True, True, None, None, None, None)         # 构造一个值为True的叶子节点
 
             else:                                                       # 说明方格内有0有1
-                root = Node('*', False, None, None, None, None)         # 构造一个值为"*"的中间结点
+                root = Node('*', False, None, None, None, None)         # 构造一个值为"*"的中间结点  不能只用 true或者false了 上述两种情况才可以 因为全都是 要读懂题意
                 n = N // 2                                              # 求方格的一半
                 root.topLeft = dfs(grid, h, w, n)                       # 构建左上子树
                 root.topRight = dfs(grid, h, w+n, n)                    # 构建右上子树
