@@ -28,6 +28,11 @@ def and_oper(a,b):
 
 
 if __name__ == '__main__':
+
+
+    a = [1,2,3,4]
+    print(a[1:-1])
+    print(a[-1])
     equations = [["a","b"],["b","c"]]
     values = [2.0,3.0]
     #print_zip()
