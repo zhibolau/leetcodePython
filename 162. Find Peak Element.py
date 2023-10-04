@@ -21,3 +21,23 @@ class Solution(object):
 找出此部分的最大值就是正确的。
 
 """
+
+
+#method2
+"""
+举例看数组可能存在的几种形态，看在这几种数组形态中上面的解决思路是否能够找到Peak Element：
+
+第一种是降序数组，如[5,4,3,2,1]，Peak Element为 0；i = 0时即满足nums[i] > nums[i + 1],返回0。
+
+第二种是升序数组，如[1,2,3,4,5]，Peak Element为 4；遍历到终点i = 4发现都不满足nums[i] > nums[i+1]，因此数组中最后一个元素为Peak Element，返回4。
+
+第三种是Peak Element在数组中间任意位置，如[1,3,2,4,5], Peak Element为 1；遍历到i = 1时满足nums[i] > nums[i+1]，因此返回1。
+
+从上面的例子中也可以看到这种解决思路是可行的。
+"""
+class Solution:
+    def findPeakElement(self, nums: List[int]) -> int:
+        for i in range(0,len(nums)-1):
+            if(nums[i] > nums[i+1]):
+                return i
+        return len(nums)-1
