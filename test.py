@@ -31,6 +31,7 @@ if __name__ == '__main__':
 
 
     a = [1,2,3,4]
+    print(a[:-1])
     print(a[1:-1])
     print(a[-1])
     equations = [["a","b"],["b","c"]]
@@ -38,6 +39,7 @@ if __name__ == '__main__':
     #print_zip()
 
     str1 = 'aa'
+    
     str2 ='ab'
     str3 ='a'
     # print(is_palindrome(str1))
