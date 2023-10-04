@@ -14,3 +14,9 @@ class Solution:
         
         if m==0 and n > 0:
             nums1[:n] = nums2[:n]
+
+
+"""
+是要把所有元素放入nums1，所以要比较nums1和nums2的最大元素的大小，放入nums1的位置
+可能出现m=2，n=3 且nums1的值都比nums2的大，最后的if会处理
+"""
