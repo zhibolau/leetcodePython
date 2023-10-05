@@ -12,3 +12,6 @@ def  evalRPN(tokens):
             else:
                 stack.append(int(op1*1.0/op2))
     return stack[0]
+
+
+#没遇到运算符号就放入stack 遇到了就即时运算
