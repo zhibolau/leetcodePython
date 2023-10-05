@@ -26,4 +26,4 @@ class Solution:
                     left +=1
         return res
                     
-                    
+# 时间复杂度为O(n^2)，空间复杂度为O(1)
