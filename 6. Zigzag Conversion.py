@@ -11,10 +11,10 @@ class Solution:
 
         for i in s:
             res[row] += i
-            if row ==0:
+            if row ==0: #在到达numRows-1之前，row一直在递增
                 step = 1
-            elif row == numRows-1:
+            elif row == numRows-1: #到底儿了 就开始递减到0
                 step = -1
-            row += step
+            row += step #step用来调整行数变化的
         return ''.join(res)
         
