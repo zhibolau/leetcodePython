@@ -19,7 +19,8 @@ class LRUCache:
 
         self.head.next.prev = node
         self.head.next = node
-    def _pop_tail(self):
+
+    def _pop_tail(self): #找到tail之前的node  删除掉
         res = self.tail.prev
         self._remove_node(res)
         return res
@@ -54,8 +55,8 @@ class LRUCache:
             self.size +=1
 
             if self.size > self.capacity:
-                tail = self._pop_tail()
-                del self.cache[tail.key]
+                tail = self._pop_tail()#删除掉 没有最近使用的node  也就是tail之前的node
+                del self.cache[tail.key] #{}中也得删除
                 self.size -= 1
         else:
             node.value = value
