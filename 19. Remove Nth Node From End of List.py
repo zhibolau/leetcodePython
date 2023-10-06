@@ -18,7 +18,7 @@ def removeNthFromEnd(head, n):
     slow , fast = dummy, head
     for _ in range(n): #slow少走了
         fast = fast.next
-    while fast:
+    while fast: # f到结尾时候  与s距离为n，正好是从结尾数第n个
         fast = fast.next
         slow = slow.next
     slow.next = slow.next.next
