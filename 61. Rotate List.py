@@ -13,16 +13,16 @@ class Solution:
         len = 0
         
         tail= fast = slow = head
-        while tail:
+        while tail: #计算链表长度
             tail = tail.next
             len+=1
         k = k % len
-        if k ==0:
+        if k ==0:# k是长度的倍数就不用翻转了
             return head
         for _ in range(k):
             fast = fast.next
 
-        while fast.next:
+        while fast.next: #k为slow与fast的距离  与删除倒数第几个node一样
             slow = slow.next
             fast = fast.next
 
