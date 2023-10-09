@@ -15,3 +15,6 @@ class Solution:
             combinations.append(candidates[i])
             self.dfs(candidates,target-candidates[i],i,combinations,res)
             combinations.pop()
+
+
+#找target的组合，target变0 和 备选比target大 就结束
