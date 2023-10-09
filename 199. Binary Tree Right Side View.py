@@ -13,7 +13,7 @@ class Solution(object):
         if not root: return None
         res = []
         q=deque()
-        q.append(root)
+        q.append(root) #or write it this way: q=deque([root])
         while q:
             
             level=[]
