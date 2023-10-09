@@ -11,7 +11,7 @@ class Solution:
     def valid(self, root, min,max):
         if not root:
             return True
-        elif root.val >= max or root.val <=min:
+        elif root.val >= max or root.val <=min: #等号不能忘记 因为可能都是一样的元素
             return False
         return self.valid(root.left,min,root.val) and self.valid(root.right,root.val,max)
         
