@@ -19,7 +19,7 @@ class Solution(object):
         #this index would tell the size of left or right tree
 
         #get  left tree of pre and inorder
-        root.left = self.buildTree(preorder[1:rootPos+1],inorder[:rootPos])
+        root.left = self.buildTree(preorder[1:rootPos+1],inorder[:rootPos]) #idx是从inorder拿来的
         #get  right tree of pre and inorder
         root.right = self.buildTree(preorder[rootPos+1:],inorder[rootPos+1:])
         
