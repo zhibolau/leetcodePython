@@ -7,9 +7,6 @@
 class Solution:
     def getMinimumDifference(self, root: Optional[TreeNode]) -> int:
         nums = self.inTraversal(root, [])
-        # ans = kkk[1] - kkk[0]
-        # for i in range(2, len(kkk)):
-        #     ans = min(ans, kkk[i] - kkk[i - 1])
         ans = min([abs(nums[i+1] - nums[i]) for i in range(len(nums)-1)])
         return ans
 
