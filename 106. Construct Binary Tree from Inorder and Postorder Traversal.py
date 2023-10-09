@@ -9,7 +9,7 @@ class Solution:
         if not inorder:
             return None
         
-        root_val = postorder[-1]
+        root_val = postorder[-1] #root在最后
         root = TreeNode(root_val)
         root_index = inorder.index(root_val)
         root.left = self.buildTree(inorder[:root_index],postorder[:root_index])
