@@ -6,4 +6,5 @@ class Solution:
             res = max(sum,res)
             sum = max(0,sum)
         return res
-        
+
+#同时更新sum与0的最大值
