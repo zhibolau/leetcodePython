@@ -16,4 +16,5 @@ class Solution:
         if nums[end] >= target:
             return end
         return len(nums)
-        
+    
+#看看target是放在开始还是结尾之前， 还是最末位，相当于target最大
