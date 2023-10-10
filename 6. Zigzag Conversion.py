@@ -17,4 +17,4 @@ class Solution:
                 step = -1
             row += step #step用来调整行数变化的
         return ''.join(res)
-        
+#看row变化规律 用step来调整
