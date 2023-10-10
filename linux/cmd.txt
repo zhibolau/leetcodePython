@@ -1,0 +1,5 @@
+100 questions: https://blog.csdn.net/o9109003234/article/details/117719299
+1/ top 命令详解 https://zhuanlan.zhihu.com/p/623777553
+2/ inode
+3/ 软硬链接
+4/ 进程线程内存共享
