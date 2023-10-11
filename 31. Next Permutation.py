@@ -7,9 +7,9 @@ class Solution:
         if len(nums)<=1: return nums
         #从右向左扫过，寻找一个递增序列
         for i in range(len(nums)-2,-1,-1):
-            if nums[i]<nums[i+1]:
+            if nums[i]<nums[i+1]:#递增
                 for k in range(len(nums)-1,i,-1):
-                    if nums[k]>nums[i]:
+                    if nums[k]>nums[i]: # 分段的后面还比前面最大的还大
                         nums[i],nums[k]=nums[k],nums[i]
                         nums[i+1:]=sorted(nums[i+1:])
                         break
