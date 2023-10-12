@@ -15,7 +15,7 @@ class Solution:
     """
 
     def uniquePaths(self, m, n):
-        dp = [[0] * n for _ in range(m)]
+        dp = [[0] * n for _ in range(m)] #m为rows， 所以先【0】*n
         for i in range(m):
             for j in range(n):
                 if i == 0 or j == 0:
