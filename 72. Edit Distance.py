@@ -22,11 +22,11 @@ class Solution:
         if w1[i - 1] == w2[j - 1]:
             cost = min(cost, self.helper(w1, i - 1, w2, j - 1, memo))
         else:
-            # replace
+            # replace： 末位一样了所以都少了1
             cost = min(cost, 1 + self.helper(w1, i - 1, w2, j - 1, memo))
             # remove
             cost = min(cost, 1 + self.helper(w1, i - 1, w2, j, memo))
-            # insert
+            # insert：
             cost = min(cost, 1 + self.helper(w1, i, w2, j - 1, memo))
         
         memo[(i, j)] = cost
