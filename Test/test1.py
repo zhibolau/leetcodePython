@@ -9,3 +9,7 @@ for i in thislist:
 # print(thislist[:0])
 
 # print(thislist[:1])
+
+
+dp=[1]*3
+print(dp)
