@@ -47,3 +47,5 @@ class Solution:
                 res += self.helper(i, ans) * self.helper(n - i - 1, ans)
             ans[n] = res
             return res
+        
+#算出有几个 ，  II 95题 是都有啥返回结果
