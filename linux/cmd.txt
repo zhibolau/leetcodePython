@@ -14,3 +14,7 @@ https://www.cnblogs.com/peida/archive/2012/12/28/2837345.html
 
 thread
 https://www.cnblogs.com/EasonJim/p/8098217.html
+
+lsof查看文件被什么进程占用
+https://blog.csdn.net/redmoon729/article/details/53840860
+

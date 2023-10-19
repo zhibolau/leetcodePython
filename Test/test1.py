@@ -13,3 +13,15 @@ for i in thislist:
 
 dp=[1]*3
 print(dp)
+
+a = [0]+[1]
+print(a)
+
+row=[1]
+for x, y in zip([0]+row, row+[0]):
+	print(x)
+	print(y)
+
+
+for i in range(1,1):
+	print(i)

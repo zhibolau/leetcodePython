@@ -1,0 +1,33 @@
+page title
+8 find pattern sub array  就是两头两个数相等，且等于中间所有数相加
+9 find minimum inefficiency
+10 
+
+1. Give an array try to find the largest size of perfect squire set. Perfect squre: [3,9,81] [5,25,625...]
+2. Give two products array a and b, product price are a[i] + (j-1) * b[i], calculate the least cost to buy k products.
+
+https://www.1point3acres.com/bbs/thread-1020131-1-1.html
+Counting Binary Substrings Amazon OA 2023.pdf
+Decode String Frequency Amazon OA 2023.pdf
+Find Lowest Price Amazon OA 2023.pdf
+Max Average Stock Price Amazon OA 2023 Solution.pdf
+
+https://www.1point3acres.com/bbs/thread-1019466-1-1.html
+reading book,让你求每天最少读几页，可以在最大天数内读完。:
+二分查找就好了，类似于
+https://leetcode.com/problems/cutting-ribbons/
+
+min cost buy m products:
+用 pq，构造一个 itemcost class 存放 acost, bcost, count ， pq 的 compator 就是 按照 itemcost 的 总 cost 和排序。
+
+22 amazon lottery system
+
+https://leetcode.com/discuss/interview-question/3949864/Amazon-OA
+delivery center
+
+29
+bag of rice
+prohibited wor‍ds 的 substring 的最大长度
+1. LinkedHashMap, similar to leetcode 146 
+2. Slicing Windows, similar to leetcode 643
+
