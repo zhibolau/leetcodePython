@@ -1,5 +1,16 @@
 100 questions: https://blog.csdn.net/o9109003234/article/details/117719299
 1/ top 命令详解 https://zhuanlan.zhihu.com/p/623777553
+https://www.cnblogs.com/peida/archive/2012/12/24/2831353.html
 2/ inode
 3/ 软硬链接
 4/ 进程线程内存共享
+https://cloud.tencent.com/developer/article/1688297
+Linux创建线程时 内存分配的那些事
+https://blog.csdn.net/Z_Stand/article/details/106444952
+HTTP 1.0、1.1、2.0、3.0区别
+https://www.jianshu.com/p/cd70b8e90d00
+iostat
+https://www.cnblogs.com/peida/archive/2012/12/28/2837345.html
+
+thread
+https://www.cnblogs.com/EasonJim/p/8098217.html
