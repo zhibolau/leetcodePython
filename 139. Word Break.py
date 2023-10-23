@@ -31,3 +31,16 @@ class Solution(object):
         如果是前缀：
             取出该字符串，判断剩下的是否可以
     找完所有可能后，仍然不行，直接返回这段字符串无法找到答案"""
+
+
+
+#超时
+
+class Solution:
+    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+        if not s:return True
+        for i in range(1,len(s)+1):
+            if s[:i] in wordDict:
+                if self.wordBreak(s[i:],wordDict):
+                    return True
+        return False
