@@ -11,3 +11,5 @@ class Solution:
             stack.append(num)
             
         return [-1 if not num in g_map else g_map[num] for num in nums1]
+    
+    #找隔壁比他大的数字
