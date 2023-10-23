@@ -9,7 +9,7 @@ import re
 
 def  seeCows(cows):
     heights=cows
-    heightStack = [] 
+    heightStack = [] #stack里面放的都是比他矮的，  碰到高的就pop
     heightStack.append(len(heights))
     count = 0
     for i in range(len(heights) - 1, -1, -1):
