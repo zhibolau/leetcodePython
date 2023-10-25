@@ -25,3 +25,7 @@ for x, y in zip([0]+row, row+[0]):
 
 for i in range(1,1):
 	print(i)
+
+
+if not 0:
+	print(1)
