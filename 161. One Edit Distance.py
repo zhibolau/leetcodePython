@@ -10,12 +10,12 @@ class Solution:
         if abs(n - m) > 1: 
           return False 
         
-        for i in range(min(n, m)):
+        for i in range(min(n, m)): #idx要按小的走
           if s[i] != t[i]: 
-            if m == n: 
+            if m == n: # ab cb
               return s[i + 1:] == t[i + 1:]
-            if n == m + 1: 
+            if n == m + 1:  # abc bc
               return s[i + 1:] == t[i:]
-            else: 
+            else:  #ab cab
               return s[i:] == t[i + 1:]
-        return n != m 
+        return n != m  # 都是c 不行  没有操作，所以得长度不等
