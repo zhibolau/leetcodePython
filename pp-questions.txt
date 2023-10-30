@@ -1,0 +1,152 @@
+A system design test on how Mobile QR Scan works
+Write a concurrency converter app
+different implementations of hashmaps, pros and cons, etc.
+1. Online coding round(2 medium difficulty questions)
+2. Engineering Manger round: They will test your knowledge on dbms, os, networking and a leetcode medium question. volatile, synchronized, static keywords, RDBMS guarentees, isolation levels in databases(read committed isolation, snapshot isolation, serializable snapshot isolation), SQL vs NOSQL, LRU Cache implementation, garbage collection.
+3. System Design: QR code scan payment mechanism that should fetch user & merchant details, debit the amount from account and credit into merchant bank account.
+4. String palindrome, longest common palindrome sub string and binary search question to find start and end indexes of a number and general cs questions.
+Why did you guys use a load balancer here when it comes out of the box with kubernetes? What are some common mistakes in setting monitoring metrics/SLAs? How do you ensure various types of engineering best practices are followed?
+- Design QR code based payment system.
+Manager round - questions on java, springboot and db Design interview - design a payment system to pay to a merchant Coding question - DP question related to minimum weight path, caching questions, data structures, java, springboot & DB questions(ACID properties, types of isolation etc)
+Serialize and deserialise the binary tree
+HLD/LLD Proximity service design like nearby.
+- what is database index & its implementation - what is database transaction & how do you implement it
+what are some applications of hashing
+What is the difference between HTTP and HTTPS?
+Write a program to get nth Fibonacci series
+How would I resolve out of memory issue in Spark?
+Word Ladder, Binary Tree level order traversal, stack and sort question, Time complexity, and space complexity questions, Some basic SQL questions, system design
+1. design the trading system arch 2. database transactions, programming language
+TCP three-way handshake; how to reverse the linkedlist.
+the difference between microservices and monolithic,
+Wordladder General programming knowledge interview: - Project experience - Database (ACID, isolation level, database scaling) - Hashmap in Java - LRU Cache - Sorting
+implement a simple frontend application without using any framework.
+Leetcode WordLadder
+Http vs Https
+Encryption, decryption
+Hashing
+Java keywords: final, volatile, threadLocal
+Testing related questions and defect assessments
+have you ever met some issue
+say one of your biggest achievement
+MQ, deadlock, cache,
+experience in handling difficult technical challenges such as scalability and reliability issues, as well as problem solving skills, and how to prevent the issues from happening again as an engineering manager.
+designing a system such that it can handle PayPay size of throughput. 
+if we were to build a product, how I would describe to them how the system would look like, how it interacts with existing modules, what metrics are important and how to prioritize them, how I would assess the effort, what if the effort needs to be cut down, so forth. It is pretty much an illustration on what our interaction in the company would look like.
+1) Leadership & Management Interview
+Experience in managing team, project, people, how to handle tough situations and overcome them. Vision when joining PayPay and what would you try to achieve in the first 6 months.
+
+2) Engineering Interview
+Experience in handling difficult technical challenges and how to overcome it. Real life scenario system design discussion on how to tackle scalability and reliability aspects of a high throughput system based on certain requirements.
+
+3) Product Interview
+Experience in managing and delivering highly impactful product/feature and collaborating with multiple stakeholders. Real life scenario product design discussion on how to explain to product people how the system would look like, metrics to look into, and managing the timeline.
+
+4) Culture Fit Interview
+Mostly behavioral question on leadership experience as well as thoughts on the role of Engineering Manager.
+sql, python, decision tree
+Risk control case
+string permutations and a BFS graph question (application not direct)
+ databases and many case based questions realted to distributed systems
+  python internals and memory management and a linkedlist question on approach after which there was a leetcode medium question on palindromes and was expected to write production ready code. They use codesignal
+  Questions about databases, strings and microservices
+Design Twitter Binary Search Backtracking
+how malicious log4j versions can be eliminated from source code.
+Security implementation on DevOps pipelines and deployment environments.
+3. Theoritical questions around encryption/decryption, hashing, SQL injection and methods to prevent it.
+Kafka, eks, terraform
+Design a web application that allows employees to submit feedback toward each other's performance review.
+how is hash accessed by the compiler in Java
+concurrency,deadlocks 
+ implement a monitoring system including High availability and Distrubted system architecture
+networks like communication protocols, security, database multithreading
+how to implement LRU cache 
+java  static, final, volatile 
+sorting algorithm
+design pattern (Factory pattern)
+medium level puzzle code challenge
+system design of some fintech related features/transaction.
+explaining about array, set, linked list, hashmap, hash collision
+Devops, CI/CD
+- RDBMS related usecase, issues, and performance optimization.
+5. Talking with HR
+one was cash registry- print the coins/bills to be returned to customers
+- what does final, volatile and static do in java
+- Which DS will you use to design LRU cache
+- given a gateway delegating requests to two instances 1 and 2
+after 1 goes down gateway stopped responding in following few mins
+what could be the issue?
+- given a table with cols transactionId, srcCustId(90% of time user), targetCustId(90% of times merchant), amount, timestamp
+which column will you use to shard your DB and why
+OpenSSL , Docker & Kubernetes, Scenario based questions,
+fundamental language knowledge ( linkedlist, array, hashmap, set, etc)
+- Https, Http, network things.
+- Time complexity of different data structure was asked and expected to give just O notation answer.
+Design REST API ( 30 mins )
+DB, Experience, System Performance, concurrency
+- multithreading, DB, junit, spring boot, configuration, memory management. GC
+implement binary search in a sorted array.
+code share with fibonacci series
+What is the definition of QR code
+Return the kth largest value in an unsorted array. (Merge sort or quick sort)
+Create a module in any language that implements the LCU (least commonly used) cache data structure. With O(1) insertion, retrieval and removal.
+Why do you want to change your company?
+What do you find challenging in your current position?
+How is memory managed in Java? When is an object erased from memory? What’s the name of a GC?
+What's the difference between hashmap and hashtable?
+What's the time complexity to insert and retrieve in a hashmap? In an array? Worst case? Elaborate on the amortized time complexity for array.
+How can you guarantee consistency in the database transactions? If you have a mutex?
+ 2 basic string manipulation algorythms
+ AIRBNB 和UBER EAT PAYMENT SYSTEM
+ 考BACKEND DOMAIN 各种DESIGN PATTERN/MUTLI THREADING/PROCESS 分布式系统 GC collection的知识
+
+
+ How hash map work?
+How SQL index work?
+如果有十亿个URL要找duplicate，设计一个演算法可以用有限的记忆体找
+Loop Interview(英文):
+分四关不同面向，各一小时。
+Technical knowledge: HTTP, GRPC, Hashmap等等 + 一题medium
+System design：问怎麽设计paypay的payment system + 一题medium
+DS & Algo: 问sorting等time complexity + 一题easy
+Coding: 问JVM、GC、Java的语言细节 + 一题Medium或Hard
+我只有easy那题写完，其他都是有想出来写一些假code
+JVM和GC那边只有用以前大学专题的记忆回答，很多大概都是猜测。
+
+
+有沒有碰過微服務
+
+說明什麼是indexing
+我說了primary key, unique key都屬於indexing範圍，介紹了下這兩個是甚麼
+
+一張table有name, age, sex欄位，問你怎麼選哪些欄位做indexing，指令怎麼下
+我說了不會，我說之前的project雖然會碰到設定db，但這一塊我比較沒有深入探究。也因這場面試，我結束後回去看起了大神朋友推薦的SQL Performance Enhancement 的書📖 (˶‾᷄ །། ‾᷅˵)
+
+unit test都怎麼寫的
+我說了包括JUnit和Spock的差別與優缺點，還有當時我參與過的一個project，我看到同事怎麼用mybatis去模擬實際db塞資料的方式，還有怎麼決定哪種資料何時要做mock。
+
+介紹一下你所理解的Restful API
+講述了我做過的sharing, 在前公司時候兩個部門對於Restful API設計觀念的不同，各自的出發點，實務上我們怎麼讓API設計結合OWASP。
+
+問以前你CI/CD的project
+我講述在新創公司時候怎麼幫產品線用Jenkins做的CI/CD，還有怎麼做的auto deployment，講述方法與scope範圍
+
+​後半小時，來到Coding題：
+給一個陣列，例如[1,2,2,3,5]，找出前k個大的數字
+
+我第一步先問要return的是要Integer List Array, 還是Integer Array
+
+第二步問input會不會有小數點
+
+我先說了最直覺就是先sort，然後loop整個array，每次都k – ，找到前k個小的數字，但時間複雜度是O(nlogn)，我問面試官是要這個解法嗎，他當然爾問說有沒有更好的解法，並給我提示說可以想成輸入都不重複的試看看。
+
+我當下腦門已經想到了O(n)的解法，我說我已經想到了這樣的解法去解決有重複的狀況，可不可以直接回答，面試官說可以，於是我說是用heap解法。
+
+java有priority queue，指定好comparator，放進去的pair可以依照我們想要的就做好由大到小的排序，在放入時候時間複雜度只要O(logn)，因為它底層是heap的架構，然後整體程式的時間複雜度是O(n) + O(logn) + O(k)，但n一定大於等於k，所以就是O(n)
+面試官就說想看我寫寫看，我就快速的邊寫code邊說想法給面試官聽，包括怎麼在宣告時定義comparator，讓放進去的pair可以由大到小排序，也說了這方法會用到額外O(k)的空間複雜度。
+
+最後我是選擇return List Integer，面試官問我說，知不知道ArrayList與LinkedList差別，問我在這邊為何用ArrayList，我直接回答，如果是從第i個位置新增元素，確實LinkedList比較快，因為底層資料結構有兩個pointer，一個指向前一個node，一個指向後一個node，所以時間複雜度只要O(1)，但ArrayList要O(n)，因為還要更新其他現有元素的順序，但我最後一行程式是直接把元素新增在尾端，此時你用兩種資料結構，速度都是O(1)。
+
+最後，這關被刷了，我本來有點沮喪吧，後來才知道這是SRE的缺…那當然不會上啊哈哈哈哈，我對於系統架構以及DB設定部分，畢竟沒有很熟，skillset專精更多是在別的部分…早知道聽朋友的話，不要亂投履歷QwQ
+
+不過這邊大概可以理解為何，當時面試官並不知道priority queue這個heap的資料結構處理方式…當然這部分我認為沒有一定，再來重點是，我後來發現我這解法的時間複雜度其實還是O(nlogn)……(⑉･̆⌓･̆⑉)
