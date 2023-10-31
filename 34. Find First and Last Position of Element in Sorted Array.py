@@ -18,7 +18,7 @@ class Solution(object):
         start,end = 0,len(nums)-1
         while start+1<end:
             mid= (start+end)//2
-            if nums[mid]<target:
+            if nums[mid]<target:#这里没有等于
                 start=mid
             else:
                 end =mid
@@ -32,7 +32,7 @@ class Solution(object):
         start,end = 0,len(nums)-1
         while start+1<end:
             mid= (start+end)//2
-            if nums[mid]<=target:
+            if nums[mid]<=target:   #这里有等于
                 start=mid
             else:
                 end =mid
