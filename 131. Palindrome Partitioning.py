@@ -10,8 +10,8 @@ class Solution:
         res = []
         for i in range(len(s)):
             pre=s[:i+1]
-            if pre==pre[::-1]:
-                parts=self.help(s[i+1:],memo)
+            if pre==pre[::-1]: #一样的才是palin
+                parts=self.help(s[i+1:],memo) #再找到i+1的palin 进行组合
                 for i in parts:
                     res.append([pre]+i)
         memo[s] = res
