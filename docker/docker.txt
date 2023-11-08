@@ -1,0 +1,183 @@
+Docker 包括三个基本概念:
+
+镜像（Image）：Docker 镜像（Image），就相当于是一个 root 文件系统。比如官方镜像 ubuntu:16.04 就包含了完整的一套 Ubuntu16.04 最小系统的 root 文件系统。
+容器（Container）：镜像（Image）和容器（Container）的关系，就像是面向对象程序设计中的类和实例一样，镜像是静态的定义，容器是镜像运行时的实体。容器可以被创建、启动、停止、删除、暂停等。
+仓库（Repository）：仓库可看成一个代码控制中心，用来保存镜像。
+
+docker的基础命令
+docker的守护进程查看
+systemctl status docker
+
+docker 镜像查看
+docker image ls
+
+docker 容器查看
+docker ps
+
+Docker Registry配置和查看
+cat /etc/docker/daemon.json
+
+cat>/etc/docker/daemon.json<<EOF
+{
+  "registry-mirrors":["http://10.24.2.30:5000","https://tnxkcso1.mirrors.aliyuncs.com"],
+  "insecure-registries":["10.24.2.30:5000"]
+}
+EOF
+
+systemctl daemon-reload               #重载unit配置文件
+systemctl start docker     #启动Docker
+systemctl restart docker     #重新启动Docker
+docker -v #查看Docker版本
+docker info #查看docker info 的引擎信息
+
+docker image pull <repository>:<tag>
+docker save 镜像id -o /home/mysql.tar #保存镜像
+docker load -i mysql.tar #载入镜像
+docker tag 6e421b8753a2  172.18.8.104/rancher/rke-tools:v0.1.52  #tag image
+docker rmi image_name #delete image
+docker export 镜像id -o /home/mysql-export.tar
+docker import mysql-export.tar
+
+docker run -itd -p 6080:80 -p 6022:22 docker.io/lemonbar/centos6-ssh:latest
+停止容器
+docker stop id
+删除容器
+docker rm id
+docker top #查看容器的进程信息
+docker exec -it determined_curie  ps -ef #在容器内部和宿主机中查看容器中的进程信息
+
+容器的PID namespace（命名空间）
+在Docker中，进程管理的基础就是Linux内核中的PID名空间技术。
+
+在不同PID名空间中，进程ID是独立的；即在两个不同名空间下的进程可以有相同的PID。
+
+在Docker中，每个Container进程缺省都具有不同的PID名空间。通过名空间技术，Docker实现容器间的进程隔离。
+
+docker中运行的容器进程，本质上还是运行在宿主机上的，所以也会拥有相对应的PID
+
+找出容器ID
+# docker ps
+查看容器信息
+docker inspect  id
+
+
+Docker默认的文件目录位于Linux server的/var/lib/docker 下面。目录结构如下
+
+|-----containers：用于存储容器信息
+|-----image：用来存储镜像中间件及本身信息，大小，依赖信息
+|-----network
+|-----swarm
+|-----tmp：docker临时目录
+|-----trust：docker信任目录
+|-----volumes：docker卷目录
+
+/usr/bin/dockerd
+Docker Daemon
+守护进程负责和Docker client交互，并管理Docker镜像、容器。
+
+docker-shim
+docker-shim是一个真实运行的容器的真实垫片载体，
+
+每启动一个容器都会起一个新的docker-shim的一个进程，
+
+他直接通过指定的三个参数：
+
+容器id，
+boundle目录（containerd的对应某个容器生成的目录，一般位于：/var/run/docker/libcontainerd/containerID），
+运行时二进制（默认为runc）
+调用runc的api创建一个容器（比如创建容器：最后拼装的命令如下：runc create 。。。。。）
+
+
+Docker-Compose 项目是Docker官方的开源项目，负责实现对Docker容器集群的快速编排。
+
+docker架构
+distribution 负责与docker registry交互，上传洗澡镜像以及v2 registry 有关的源数据
+registry负责docker registry有关的身份认证、镜像查找、镜像验证以及管理registry mirror等交互操作
+image 负责与镜像源数据有关的存储、查找，镜像层的索引、查找以及镜像tar包有关的导入、导出操作
+reference负责存储本地所有镜像的repository和tag名，并维护与镜像id之间的映射关系
+layer模块负责与镜像层和容器层源数据有关的增删改查，并负责将镜像层的增删改查映射到实际存储镜像层文件的graphdriver模块
+graghdriver是所有与容器镜像相关操作的执行者
+
+
+docker是怎么工作的?
+实际上docker使用了常见的CS架构，也就是client-server模式，docker client负责处理用户输入的各种命令，
+比如docker build、docker run，真正工作的其实是server，也就是docker demon，值得注意的是，
+docker client和docker demon可以运行在同一台机器上。
+
+Docker是一个Client-Server结构的系统，Docker守护进程运行在主机上， 然后通过Socket连接从客户端访问，
+守护进程从客户端接受命令并管理运行在主机上的容器。守护进程和客户端可以运行在同一台机器上。
+
+基本的Docker使用流程
+一切都从Dockerfile开始。Dockerfile是镜像的源代码。
+创建Dockerfile后，您可以构建它以创建容器的镜像。镜像只是“源代码”的“编译版本”，即Dockerfile。
+获得容器的镜像后，应使用注册表重新分发容器。注册表就像一个git存储库 - 你可以推送和拉取镜像。
+接下来，您可以使用该镜像来运行容器。在许多方面，正在运行的容器与虚拟机（但没有管理程序）非常相似
+
+Dockerfile 中最常见的指令是什么？
+FROM：指定基础镜像
+LABEL：功能是为镜像指定标签
+RUN：运行指定的命令
+CMD：容器启动时要运行的命令
+
+Dockerfile 中的命令 COPY 和 ADD 命令有什么区别？
+COPY 与 ADD 的区别 COPY 的 SRC 只能是本地文件，其他用法一致。 
+
+ 解释一下 Dockerfile 的 ONBUILD 指令？ 
+ 当镜像用作另一个镜像构建的基础时，ONBUILD 指令向镜像添加将在稍后执行的触发指令。
+ 如果要构建将用作构建其他镜像的基础的镜像（例如，可以使用特定于用户的配置自定义的应用程序构建环境或守护程序），
+ 这将非常有用。
+
+#enter docker container
+ docker exec -it 784fd3b294d7 /bin/bash
+
+容器退出后，通过 docker ps 命令查看不到，数据会丢失么？
+
+容器退出后会处于终止（exited）状态，此时可以通过 docker ps -a 查看，其中数据不会丢失，
+还可以通过 docker start 来启动，只有删除容器才会清除数据。
+
+如何临时退出一个正在交互的容器的终端，而不终止它？
+按 Ctrl+p，后按 Ctrl+q，如果按 Ctrl+c 会使容器内的应用进程终止，进而会使容器终止。
+
+docker容器之间怎么隔离?
+Linux中的PID、IPC、网络等资源是全局的，而NameSpace机制是一种资源隔离方案，在该机制下这些资源就不再是全局的了，
+而是属于某个特定的NameSpace，各个NameSpace下的资源互不干扰。
+虽然有了NameSpace技术可以实现资源隔离，但进程还是可以不受控的访问系统资源，比如CPU、内存、磁盘、网络等，
+为了控制容器中进程对资源的访问，Docker采用control groups技术(也就是cgroup)，
+有了cgroup就可以控制容器中进程对系统资源的消耗了，比如你可以限制某个容器使用内存的上限、可以在哪些CPU上运行等等。
+有了这两项技术，容器看起来就真的像是独立的操作系统了。
+
+仓库( Repository)、 注册服务器( Registry)、 注册索引( Index)有何关系？
+仓库是存放一组关联镜像的集合，比如同一个应用的不同版本的镜像。注册服务器是存放实际的镜像文件的地方。
+注册索引则负责维护用户的账号、权限、搜索、标签等的管理。因此，注册服务器利用注册索引来实现认证等管理。
+
+如何在生产中监控 Docker？
+Docker 提供 docker stats 和 docker 事件等工具来监控生产中的 Docker。
+
+我们可以使用这些命令获取重要统计数据的报告。
+
+Docker 统计数据：当我们使用容器 ID 调用 docker stats 时，我们获得容器的CPU，内存使用情况等。
+它类似于 Linux 中的 top 命令。
+
+Docker 事件：Docker 事件是一个命令，用于查看 Docker 守护程序中正在进行的活动流。 
+一些常见的 Docker 事件：attach，commit，die，detach，rename，destroy 等。
+我们还可以使用各种选项来限制或过滤我们感兴趣的事件。
+
+Docker的卷是什么？
+
+答：卷是Docker用于持久化存储的一种方式，它的作用是将数据存储在容器之外，
+使得数据不会随着容器的删除而丢失。Docker的卷可以是本地文件系统、网络文件系统、内存文件系统等。
+
+
+如何查看镜像支持的环境变量？
+答：
+可以使用 docker run IMAGE env 命令
+
+容器退出后，通过docker ps 命令查看不到，数据会丢失么？
+答：
+容器退出后会处于终止（exited）状态，此时可以通过 docker ps -a 查看，其中数据不会丢失，
+还可以通过docker start 来启动，只有删除容器才会清除数据。
+
+很多应用容器都是默认后台运行的，怎么查看它们的输出和日志信息？
+答：
+使用docker logs，后面跟容器的名称或者ID信息
+
