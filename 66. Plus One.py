@@ -12,3 +12,4 @@ class Solution:
         for i in l_res:
             res_str.append(int(i))
         return res_str
+#self done
