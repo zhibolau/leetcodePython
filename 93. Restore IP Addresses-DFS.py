@@ -24,3 +24,26 @@ class Solution:
 
         #使用dfs求解。可将题目理解成在一个字符串中加入3个挡板，得到四个子字符串的值都小于255.
 
+
+
+class Solution(object):
+    def restoreIpAddresses(self, s):
+        """
+        :type s: str
+        :rtype: List[str]
+        """
+               
+        res = []
+        self.help(s, 0, res, '')
+        return res
+
+    def help(self,s, parts, res, ip):
+            if parts == 4:
+                if s=='': 
+                    res.append(ip[1:])
+                    return
+            for i in range(1,4):
+                if i <=len(s):
+                    if int(s[:i]) <= 255:
+                        self.help(s[i:], parts+1,res, ip+'.'+s[:i])
+                    if s[0] =='0':break  
