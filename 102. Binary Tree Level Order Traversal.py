@@ -9,7 +9,7 @@ class Solution:
         if not root:
             return None
 
-        q,result = collections.deque([root]), []
+        q,result = collections.deque(root), []
         while q:
             level = [] #记录每一层的数值
 
