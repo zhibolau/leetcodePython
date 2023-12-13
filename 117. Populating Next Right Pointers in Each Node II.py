@@ -5,11 +5,9 @@ class Solution:
         q = deque()
         q.append(root)
         dummy=Node(-999) # to initialize with a not null prev
-        while q:
-            length=len(q) # find level length
-            
+        while q:            
             prev=dummy
-            for _ in range(length): # iterate through all nodes in the same level
+            for _ in range(len(q)): # iterate through all nodes in the same level
                 popped=q.popleft()
                 if popped.left:
                     q.append(popped.left)
