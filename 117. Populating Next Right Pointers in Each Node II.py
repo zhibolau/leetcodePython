@@ -2,8 +2,9 @@ class Solution:
     def connect(self, root: 'Node') -> 'Node':
         if not root:
             return None
-        q = deque()
-        q.append(root)
+        # q = deque()   
+        # q.append(root)
+        q=deque([root]) #也可以
         dummy=Node(-999) # to initialize with a not null prev
         while q:            
             prev=dummy
