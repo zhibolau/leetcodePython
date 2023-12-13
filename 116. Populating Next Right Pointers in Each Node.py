@@ -22,3 +22,6 @@ class Solution(object):
             self.connect(root.left)
             self.connect(root.right)
         return root
+
+
+#看图可以写出
