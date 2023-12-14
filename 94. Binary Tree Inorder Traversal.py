@@ -38,9 +38,9 @@ class Solution:
         node = root
         while node or stack:
             while node:
-                stack.append(node)
-                node = node.left
-            node = stack.pop()
+                stack.append(node)  #先加root
+                node = node.left   #然后加左边 
+            node = stack.pop() 
             output.append(node.val)
             node = node.right
         return output
