@@ -23,7 +23,7 @@ class Solution:
         if root.left is None:
             return root
         newRoot = self.dfs(root.left)
-        root.left.right = root
+        root.left.right = root #看图可以写出
         root.left.left = root.right
         root.left = None
         root.right = None
