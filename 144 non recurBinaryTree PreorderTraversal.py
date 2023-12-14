@@ -18,3 +18,6 @@ class Solution:
             if node.left:
                 stack.append(node.left)              
         return output
+    
+
+#post 145 就是return output[::-1]
