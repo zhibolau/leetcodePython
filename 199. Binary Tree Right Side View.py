@@ -27,4 +27,4 @@ class Solution(object):
             res.append(level[-1])
         return res
                 
-        
+#只是加了level view的最后一位
