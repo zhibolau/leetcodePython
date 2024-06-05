@@ -15,7 +15,7 @@ class Solution(object):
         res = ""
         for i in range(len(stack)):
             res += stack.pop()+" "
-        return res[:-1]
+        return res[:-1] #-1 去掉空格的
     
 
 #method 2

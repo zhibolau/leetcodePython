@@ -16,7 +16,7 @@ class Solution:
                     res.append([nums[i] , nums[left] , nums[right]])
 
                     left += 1
-                    while left < right and nums[left] == nums[left - 1]: #drop重复
+                    while left < right and nums[left] == nums[left - 1]: #drop重复 上面l+1了所以查看l-1是不是与l重复了
                         left += 1
                     while left<right and nums[right] == nums[right - 1]:
                         right -= 1

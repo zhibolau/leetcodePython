@@ -19,3 +19,43 @@ class Solution(object):
                     check.add(box)
 
         return True
+    
+
+
+
+            每个box里面9个格的index
+    i=0 j=0 0  
+    i=0 j=1 1
+    i=0 j=2 2
+
+    i=0 j=3 0
+    i=0 j=4 1
+    i=0 j=5 2
+    
+    i=0 j=6 0
+    i=0 j=7 1
+    i=0 j=8 2
+
+    i=1 j=0 3 
+    i=1 j=1 4
+    i=1 j=2 5
+
+    i=1 j=3 3
+    i=1 j=4 4
+    i=1 j=5 5
+    
+    i=1 j=6 3
+    i=1 j=7 4
+    i=1 j=8 5
+
+    i=2 j=0 6 
+    i=2 j=1 7
+    i=2 j=2 8
+
+    i=2 j=3 6
+    i=2 j=4 7
+    i=2 j=5 8
+    
+    i=2 j=6 6
+    i=2 j=7 7
+    i=2 j=8 8

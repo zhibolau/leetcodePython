@@ -4,7 +4,7 @@ class Solution:
         romans = ["M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"]
         res = ''
         for i in range(len(nums)):
-            while num >= nums[i]:
+            while num >= nums[i]: #用while是因为3000的时候一直得用1000 所以要一直跟1000比  知道 低于1000了 才看下一个nums的元素
                 num -= nums[i]
                 res += romans[i]
 

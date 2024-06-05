@@ -12,7 +12,7 @@ class RandomizedSet(object):
         """
         if val in self.nums:
             return False
-        self.nums[val] = None
+        self.nums[val] = None #value题目没要求
         return True
         
 
