@@ -10,7 +10,7 @@ class MinStack(object):
         :rtype: None
         """
         if not self.stack:
-            self.stack.append((val,val))
+            self.stack.append((val,val)) #同时记录当前值 和 最小值
         else:
             self.stack.append((val,min(val,self.stack[-1][-1])))
             #also works

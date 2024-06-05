@@ -6,7 +6,7 @@ class Solution(object):
         """
         if not points:
             return 0
-        ans = 1
+        ans = 1 #只要有points 至少有一个ans
         points.sort(key=lambda x:x[1])
         last_end = points[0][1]
         for i in range(1,len(points)):
