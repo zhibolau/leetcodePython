@@ -10,7 +10,7 @@ def  evalRPN(tokens):
             elif i == '-': stack.append(op1-op2)
             elif i == '*': stack.append(op1*op2)
             else:
-                stack.append(int(op1*1.0/op2))
+                stack.append(int(op1*1.0/op2)) #记得int转换
     return stack[0]
 
 
