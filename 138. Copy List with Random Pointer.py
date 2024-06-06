@@ -14,7 +14,7 @@ class Solution:
         m = {} #dict
         cur = head
         while cur: #cur在动 head没动
-            m[cur] =Node(cur.val)
+            m[cur] =Node(cur.val) #m记录 当前node与只有当前node值的mapping
             cur = cur.next
         for n in m:
             if n.next:
